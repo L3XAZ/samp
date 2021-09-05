@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import styles from './AccountPage.module.scss'
+import styles from './DonatePage.module.scss'
 
-export default function AccountPage() {
+export default function DonatePage() {
     return (
         <div>
             <Navbar />
-            AccountPage
+            DonatePage
         </div>
     )
 }
