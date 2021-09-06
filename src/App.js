@@ -5,7 +5,6 @@ import StartPlayingPage from './pages/StartPlayingPage/StartPlayingPage';
 import DonatePage from './pages/DonatePage/DonatePage';
 import AccountPage from './pages/AccountPage/AccountPage';
 
-
 export default function App() {
   return (
     <Router>
@@ -22,7 +21,6 @@ export default function App() {
         <Route path="/account" exact>
           <AccountPage />
         </Route>
-
         <Redirect to="/main" />
       </Switch>
     </Router>
