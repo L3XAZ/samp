@@ -8,14 +8,14 @@ export default function Navbar() {
     return (
         <header className={styles.navbar}>
             <nav className={styles.list}>
-                <NavLink
-                    to="/main"
-                    isActive={(_, location) => location.hash === ""}
+                <NavHashLink
+                    to="/main#intro"
+                    isActive={(_, location) => location.hash === "#intro"}
                     className={styles.link}
                     activeClassName={styles.activeLink}
                 >
                     ГЛАВНАЯ
-                </NavLink>
+                </NavHashLink>
                 <NavHashLink
                     to="/main#about"
                     isActive={(_, location) => location.hash === "#about"}
@@ -32,7 +32,9 @@ export default function Navbar() {
                 >
                     НОВОСТИ
                 </NavHashLink>
-                <img src={logo} alt="logo" className={styles.logo} />
+                <div className={styles.logo} >
+                    <img src={logo} alt="logo" />
+                </div>
                 <Link
                     target={"_blank"}
                     to={{ pathname: "https://forum.renaissance-rp.ru/" }}
@@ -49,7 +51,7 @@ export default function Navbar() {
                 </NavLink>
                 <NavLink
                     to="/account"
-                    className={styles.link}
+                    className={`${styles.link} ${styles.accountLink}`}
                     activeClassName={styles.activeLink}
                 >
                     ЛИЧНЫЙ КАБИНЕТ
