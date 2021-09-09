@@ -4,9 +4,11 @@ import styles from './AccountPage.module.scss'
 
 export default function AccountPage() {
     return (
-        <div>
+        <div className={styles.accountPage}>
             <Navbar />
-            AccountPage
+            <div className={styles.container}>
+                <h1>В процессе разработки</h1>
+            </div>
         </div>
     )
 }
