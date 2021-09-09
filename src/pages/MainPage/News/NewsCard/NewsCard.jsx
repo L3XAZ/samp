@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './NewsCard.module.scss';
-import vector_7 from './../../images/vector_7.svg';
-import newsBorder from './../../images/news_border.svg';
+import vector_7 from './../../../../images/vector_7.svg';
 
 export default function NewsCard({ image, content }) {
     return (

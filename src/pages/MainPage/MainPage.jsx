@@ -150,38 +150,40 @@ export default function MainPage() {
                 </main>
                 <footer className={styles.footer}>
                     <section className={styles.info}>
-                        <h3 className={styles.serverName}>Renaissanse Role Play</h3>
-                        <div className={styles.socialNetworks}>
-                            <Link
-                                target={"_blank"}
-                                to={{ pathname: "https://www.instagram.com/renaissance_rp/" }}
-                            >
-                                <img src={instagram} alt="instagram link" />
-                            </Link>
-                            <Link
-                                target={"_blank"}
-                                to={{ pathname: "https://youtube.com/channel/UCUI5iljw88eg6DIGGxmP41g" }}
-                            >
-                                <img src={youtube} alt="youtube link" />
-                            </Link>
-                            <Link
-                                target={"_blank"}
-                                to={{ pathname: "https://vk.com/renaissance_rp" }}
-                            >
-                                <img src={vk} alt="vk link" />
-                            </Link>
-                            <Link
-                                target={"_blank"}
-                                to={{ pathname: "https://t.me/renaissance_rp" }}
-                            >
-                                <img src={telegram} alt="telegram link" />
-                            </Link>
-                            <Link
-                                target={"_blank"}
-                                to={{ pathname: "https://discord.gg/zPuU9HkEJj" }}
-                            >
-                                <img src={telegram} alt="discord link" />
-                            </Link>
+                        <div className={styles.serverNameAndNetworks}>
+                            <h3 className={styles.serverName}>Renaissanse Role Play</h3>
+                            <div className={styles.socialNetworks}>
+                                <Link
+                                    target={"_blank"}
+                                    to={{ pathname: "https://www.instagram.com/renaissance_rp/" }}
+                                >
+                                    <img src={instagram} alt="instagram link" />
+                                </Link>
+                                <Link
+                                    target={"_blank"}
+                                    to={{ pathname: "https://youtube.com/channel/UCUI5iljw88eg6DIGGxmP41g" }}
+                                >
+                                    <img src={youtube} alt="youtube link" />
+                                </Link>
+                                <Link
+                                    target={"_blank"}
+                                    to={{ pathname: "https://vk.com/renaissance_rp" }}
+                                >
+                                    <img src={vk} alt="vk link" />
+                                </Link>
+                                <Link
+                                    target={"_blank"}
+                                    to={{ pathname: "https://t.me/renaissance_rp" }}
+                                >
+                                    <img src={telegram} alt="telegram link" />
+                                </Link>
+                                <Link
+                                    target={"_blank"}
+                                    to={{ pathname: "https://discord.gg/zPuU9HkEJj" }}
+                                >
+                                    <img src={telegram} alt="discord link" />
+                                </Link>
+                            </div>
                         </div>
                         <div className={styles.documents}>
                             <Link

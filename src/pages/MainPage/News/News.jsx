@@ -1,5 +1,5 @@
 import React from 'react'
-import NewsCard from '../../../components/NewsCard/NewsCard'
+import NewsCard from './NewsCard/NewsCard'
 import newsImage from './../../../images/news.jpg';
 
 export default function News() {
