@@ -18,7 +18,7 @@ import instagram from './../../images/instagram.png';
 import youtube from './../../images/youtube.png';
 import vk from './../../images/vk.png';
 import telegram from './../../images/telegram.png';
-// import discord from './../../images/discord.png';
+import discord from './../../images/discord.png';
 import arrowUp from './../../images/arrowUp.png';
 import ServerCard from './ServerCard/ServerCard';
 import { positions, Provider } from "react-alert";
@@ -181,7 +181,7 @@ export default function MainPage() {
                                     target={"_blank"}
                                     to={{ pathname: "https://discord.gg/zPuU9HkEJj" }}
                                 >
-                                    <img src={telegram} alt="discord link" />
+                                    <img src={discord} alt="discord link" />
                                 </Link>
                             </div>
                         </div>
