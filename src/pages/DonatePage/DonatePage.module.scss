@@ -27,6 +27,7 @@
             grid-template-columns: 1fr 2fr;
 
             .donation {
+
                 &__form {
                     display: flex;
                     flex-direction: column;
@@ -43,6 +44,59 @@
                     .formField {
                         width: 340px;
                         height: 57px;
+                        padding: 0 30px 0 55px;
+                        outline: none;
+                        box-shadow: none;
+                        border: 0 !important;
+                        color: rgba(0, 0, 0, 0.5);
+                        background: #FCEFEF;
+                        background-image: none;
+                        border-radius: 42px;
+                        font-weight: 700;
+                        line-height: 20px;
+                    }
+
+                    .select {
+                        background-image: url('./../../images/select_arrow.svg');
+                        background-repeat: no-repeat;
+                        background-position: right 20px top 50%;
+                        appearance: none;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+
+                        &::-ms-expand {
+                            display: none;
+                        }
+                        
+                        &:focus {
+                            background-image: url('./../../images/select_arrow_2.svg');
+                        }
+                    }
+
+                    .choseServer, .enterNickname, .chosePaymentType, .enterAmount {
+                        position: relative;
+                        &::before {
+                            position: absolute;
+                            top: 16px;
+                            left: 20px;
+                        }
+                    }
+                    
+                    .choseServer::before  {
+                        content: url('./../../images/location.svg');
+                    }
+
+                    .enterNickname::before {
+                        content: url('./../../images/nickname_picture.svg');
+                    }
+
+                    .chosePaymentType::before {
+                        content: url('./../../images/cards.svg');
+                    }
+
+                    .enterAmount::before {
+                        content: url('./../../images/wallet.svg');
+                        top: 18px;
                     }
 
                     .formSubmit {

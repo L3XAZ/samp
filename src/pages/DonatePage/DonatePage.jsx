@@ -27,29 +27,37 @@ export default function DonatePage() {
                     <div className={styles.donation}>
                         <form className={styles.donation__form}>
                             <h1 className={styles.firmTitle}>ДОНАТ</h1>
-                            <select className={styles.formField} required>
-                                <option value="" selected disabled hidden>Выберите сервер</option>
-                                <option value="test">Test</option>
-                            </select>
-                            <input
-                                required
-                                type="text"
-                                name="nickname"
-                                placeholder="Введите никнейм"
-                                className={styles.formField}
-                            />
-                            <select className={styles.formField} required>
-                                <option value="" selected disabled hidden>Выберите способ оплаты</option>
-                                <option value="card">Visa, MasterCard, GooglePay, ApplePay, WebMoney, Maestro, СБЕРБАНК, Яндекс и прочие</option>
-                                <option value="qiwi">QIWI</option>
-                            </select>
-                            <input
-                                required
-                                type="text"
-                                name="amount"
-                                placeholder="Сумма"
-                                className={styles.formField}
-                            />
+                            <div className={styles.choseServer}>
+                                <select className={`${styles.formField} ${styles.select}`} required>
+                                    <option value="" selected disabled hidden>Выберите сервер</option>
+                                    <option value="test">Test</option>
+                                </select>
+                            </div>
+                            <div className={styles.enterNickname}>
+                                <input
+                                    required
+                                    type="text"
+                                    name="nickname"
+                                    placeholder="Введите никнейм"
+                                    className={`${styles.formField} ${styles.input}`}
+                                />
+                            </div>
+                            <div className={styles.chosePaymentType}>
+                                <select className={`${styles.formField} ${styles.select}`} required>
+                                    <option value="" selected disabled hidden>Выберите способ оплаты</option>
+                                    <option value="card">Visa, MasterCard, GooglePay, ApplePay, WebMoney, Maestro, СБЕРБАНК, Яндекс и прочие</option>
+                                    <option value="qiwi">QIWI</option>
+                                </select>
+                            </div>
+                            <div className={styles.enterAmount}>
+                                <input
+                                    required
+                                    type="text"
+                                    name="amount"
+                                    placeholder="Сумма"
+                                    className={`${styles.formField} ${styles.input}`}
+                                />
+                            </div>
                             <ReCAPTCHA
                                 sitekey="6LdpG1kcAAAAAEpcrJF0Dyk-v4k-wz7bopUSissw"
                                 onChange={() => setDisablePayment(false)}
