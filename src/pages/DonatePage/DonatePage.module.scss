@@ -1,16 +1,13 @@
 .donatePage {
-    width: 100vw;
-    background: no-repeat url("../../images/start_playing_bg.jpg");
-    background-size: cover;
-    color: white;
+    
 
     .wrapper {
-        width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        background: no-repeat url("../../images/start_playing_bg.jpg");
+        background-size: cover;
+        color: white;
         section {
             padding-top: 67px;
             width: 70%;
@@ -30,17 +27,32 @@
             grid-template-columns: 1fr 2fr;
 
             .donation {
-
-                &__title {
-
-                }
-
                 &__form {
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 384px;
+                    height: 534px;
 
-                    & > {
-                        display: block;
+                    .formTitle {
+                        font-size: 40px;
+                        line-height: 48px;
+                    }
+
+                    .formField {
+                        width: 340px;
+                        height: 57px;
+                    }
+
+                    .formSubmit {
+                        gap: 30px;
+                        width: 217px;
+                        height: 46px;
+
+                        &:disabled {
+                            background-color: rgba(150, 150, 150, 0.2);
+                        }
                     }
                 }
             }
@@ -50,10 +62,37 @@
                 .packs {
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
 
                     .pack {
 
                     }
+                }
+            }
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 152px;
+                height: 42px;
+                background-color: rgba(0, 0, 0, 0);
+                color: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                border-radius: 42px;
+                cursor: pointer;
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 24px;
+                letter-spacing: 0.03em;
+                    
+                &:hover:enabled {
+                    color: rgba(255, 255, 255, 0.8);
+                    border: 1px solid rgba(255, 255, 255, 1);
+                }
+            
+                &:active:enabled {
+                    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
                 }
             }
         }

@@ -1,5 +1,5 @@
-import React from 'react'
-// import ReCAPTCHA from "react-google-recaptcha";
+import React, { useState } from 'react'
+import ReCAPTCHA from "react-google-recaptcha";
 import Navbar from '../../components/Navbar/Navbar'
 import styles from './DonatePage.module.scss'
 import starterPack from './../../images/starter_pack.png';
@@ -13,43 +13,55 @@ import bronzeCase from './../../images/bronze_case.png';
 import silverCase from './../../images/silver_case.png';
 import goldenCase from './../../images/golden_case.png';
 import sponsorCase from './../../images/sponsor_case.png';
+import shoppingBasket from './../../images/shopping-basket.png';
 
 
 export default function DonatePage() {
+    const [disablePayment, setDisablePayment] = useState(true)
+
     return (
         <div className={styles.donatePage}>
             <Navbar />
             <div className={styles.wrapper}>
                 <section className={styles.donationFormAndPacks}>
                     <div className={styles.donation}>
-                        <h1 className={styles.donation__title}>ДОНАТ</h1>
-                        <form className={styles.donation__orm}>
-                            <label>
-                                Выберите сервер
-                                <select>
-                                    <option value="test">Test</option>
-                                </select>
-                            </label><br />
-                            <label>
-                                Введите никнейм
-                                <input type="text" name="nickname" />
-                            </label><br />
-                            <label>
-                                Выберите способ оплаты
-                                <select>
-                                    <option value="Test">Visa, MasterCard, GooglePay, ApplePay, WebMoney, Maestro, СБЕРБАНК, Яндекс и прочие</option>
-                                    <option value="qiwi">QIWI</option>
-                                </select>
-                            </label><br />
-                            <label>
-                                Сумма
-                                <input type="text" name="amount" />
-                            </label><br />
-                            {/* <ReCAPTCHA
-                                sitekey="Your client site key"
-                                onChange={onChange}
-                            /> */}
-                            <input type="submit" value="Оплатить" />
+                        <form className={styles.donation__form}>
+                            <h1 className={styles.firmTitle}>ДОНАТ</h1>
+                            <select className={styles.formField} required>
+                                <option value="" selected disabled hidden>Выберите сервер</option>
+                                <option value="test">Test</option>
+                            </select>
+                            <input
+                                required
+                                type="text"
+                                name="nickname"
+                                placeholder="Введите никнейм"
+                                className={styles.formField}
+                            />
+                            <select className={styles.formField} required>
+                                <option value="" selected disabled hidden>Выберите способ оплаты</option>
+                                <option value="card">Visa, MasterCard, GooglePay, ApplePay, WebMoney, Maestro, СБЕРБАНК, Яндекс и прочие</option>
+                                <option value="qiwi">QIWI</option>
+                            </select>
+                            <input
+                                required
+                                type="text"
+                                name="amount"
+                                placeholder="Сумма"
+                                className={styles.formField}
+                            />
+                            <ReCAPTCHA
+                                sitekey="6LdpG1kcAAAAAEpcrJF0Dyk-v4k-wz7bopUSissw"
+                                onChange={() => setDisablePayment(false)}
+                            />
+                            <button
+                                type="submit"
+                                disabled={disablePayment}
+                                className={styles.formSubmit}
+                            >
+                                <p>Оплатить</p>
+                                <img src={shoppingBasket} alt="" />
+                            </button>
                         </form>
                     </div>
                     <div className={styles.offer}>
