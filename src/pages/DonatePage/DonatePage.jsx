@@ -14,6 +14,9 @@ import silverCase from './../../images/silver_case.png';
 import goldenCase from './../../images/golden_case.png';
 import sponsorCase from './../../images/sponsor_case.png';
 import shoppingBasket from './../../images/shopping-basket.png';
+import vector_13 from './../../images/vector_13.svg';
+import vector_14 from './../../images/vector_14.svg';
+import vector_14_mirror from './../../images/vector_14_mirror.svg';
 
 
 export default function DonatePage() {
@@ -26,7 +29,11 @@ export default function DonatePage() {
                 <section className={styles.donationFormAndPacks}>
                     <div className={styles.donation}>
                         <form className={styles.donation__form}>
-                            <h1 className={styles.firmTitle}>ДОНАТ</h1>
+                            <div className={styles.formTopic}>
+                                <img src={vector_14} alt="" />
+                                <h1 className={styles.formTitle}>ДОНАТ</h1>
+                                <img src={vector_14_mirror} alt="" />
+                            </div>
                             <div className={styles.choseServer}>
                                 <select className={`${styles.formField} ${styles.select}`} required>
                                     <option value="" selected disabled hidden>Выберите сервер</option>
@@ -45,8 +52,8 @@ export default function DonatePage() {
                             <div className={styles.chosePaymentType}>
                                 <select className={`${styles.formField} ${styles.select}`} required>
                                     <option value="" selected disabled hidden>Выберите способ оплаты</option>
-                                    <option value="card">Visa, MasterCard, GooglePay, ApplePay, WebMoney, Maestro, СБЕРБАНК, Яндекс и прочие</option>
-                                    <option value="qiwi">QIWI</option>
+                                    <option value="card">- Visa, MasterCard, GooglePay, ApplePay, WebMoney, Maestro, СБЕРБАНК, Яндекс и прочие</option>
+                                    <option value="qiwi">- QIWI</option>
                                 </select>
                             </div>
                             <div className={styles.enterAmount}>
@@ -73,45 +80,48 @@ export default function DonatePage() {
                         </form>
                     </div>
                     <div className={styles.offer}>
-                        <h2>ЧТО МОЖНО КУПИТЬ?</h2>
+                        <div className={styles.offerTopic}>
+                            <img src={vector_13} alt="" />
+                            <h2>ЧТО МОЖНО КУПИТЬ?</h2>
+                        </div>
                         <div className={styles.packs}>
-                            <div className={styles.pack}>
+                            <div className={`${styles.pack} ${styles.starterPack}`}>
                                 <img src={starterPack} alt="starter pack" />
-                                <b>Пакет “Стартовый”</b>
-                                <ul>
-                                    <li>$500 000</li>
-                                    <li>Лицензия на авто</li>
-                                    <li>Законопослушность +50 </li>
-                                    <li>3 дня Bronze VIP</li>
+                                <b className={styles.pack__name}>Пакет “Стартовый”</b>
+                                <ul className={styles.pack__list}>
+                                    <li>- $500 000</li>
+                                    <li>- Лицензия на авто</li>
+                                    <li>- Законопослушность +50 </li>
+                                    <li>- 3 дня Bronze VIP</li>
                                 </ul>
-                                <button>350 Руб.</button>
+                                <button className={styles.pack__button}>350 Руб.</button>
                             </div>
-                            <div className={styles.pack}>
-                                <img src={millionairePack} alt="starter pack" />
-                                <b>Пакет “Миллионер”</b>
-                                <ul>
-                                    <li>$1 000 000</li>
-                                    <li>Лицензия на авто </li>
-                                    <li>Законопослушность +50</li>
-                                    <li>50% ко всем скиллам</li>
-                                    <li>3 дня х2 EXP</li>
-                                    <li>5 дней Silver VIP</li>
+                            <div className={`${styles.pack} ${styles.millionairePack}`}>
+                                <img src={millionairePack} alt="millionaire pack" />
+                                <b className={styles.pack__name}>Пакет “Миллионер”</b>
+                                <ul className={styles.pack__list}>
+                                    <li>- $1 000 000</li>
+                                    <li>- Лицензия на авто </li>
+                                    <li>- Законопослушность +50</li>
+                                    <li>- 50% ко всем скиллам</li>
+                                    <li>- 3 дня х2 EXP</li>
+                                    <li>- 5 дней Silver VIP</li>
                                 </ul>
-                                <button>650 Руб.</button>
+                                <button className={styles.pack__button}>650 Руб.</button>
                             </div>
-                            <div className={styles.pack}>
-                                <img src={richPack} alt="starter pack" />
-                                <b>Пакет “Богач”</b>
-                                <ul>
-                                    <li>$2 000 000</li>
-                                    <li>Лицензия на авто</li>
-                                    <li>Законопослушность +50</li>
-                                    <li>100% всех скиллов</li>
-                                    <li>Все лицензии </li>
-                                    <li>5 дней х2 EXP</li>
-                                    <li>7 дней Gold VIP</li>
+                            <div className={`${styles.pack} ${styles.richPack}`}>
+                                <img src={richPack} alt="rich pack" />
+                                <b className={styles.pack__name}>Пакет “Богач”</b>
+                                <ul className={styles.pack__list}>
+                                    <li>- $2 000 000</li>
+                                    <li>- Лицензия на авто</li>
+                                    <li>- Законопослушность +50</li>
+                                    <li>- 100% всех скиллов</li>
+                                    <li>- Все лицензии </li>
+                                    <li>- 5 дней х2 EXP</li>
+                                    <li>- 7 дней Gold VIP</li>
                                 </ul>
-                                <button>1400 Руб.</button>
+                                <button className={styles.pack__button}>1400 Руб.</button>
                             </div>
                         </div>
                     </div>

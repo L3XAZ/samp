@@ -1,6 +1,4 @@
 .donatePage {
-    
-
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -10,21 +8,22 @@
         color: white;
         section {
             padding-top: 67px;
-            width: 70%;
+            width: 80%;
             max-width: 1173px;
         
             @media (max-width: 1100px) {
-                width: 80%;
-            }
-        
-            @media (max-width: 960px) {
                 width: 90%;
             }
+        
+            // @media (max-width: 960px) {
+            //     width: 90%;
+            // }
         }
 
         .donationFormAndPacks {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
 
             .donation {
 
@@ -35,6 +34,13 @@
                     align-items: center;
                     width: 384px;
                     height: 534px;
+
+                    .formTopic {
+                        display: flex;
+                        justify-content: center;
+                        gap: 25px;
+                        width: 100%;
+                    }
 
                     .formTitle {
                         font-size: 40px;
@@ -61,6 +67,7 @@
                         background-repeat: no-repeat;
                         background-position: right 20px top 50%;
                         appearance: none;
+                        -ms-appearance: none;
                         -moz-appearance: none;
                         -webkit-appearance: none;
 
@@ -70,6 +77,10 @@
                         
                         &:focus {
                             background-image: url('./../../images/select_arrow_2.svg');
+                        }
+
+                        .optionWrap {
+                            white-space: pre-line !important;
                         }
                     }
 
@@ -113,13 +124,52 @@
 
             .offer {
                 
+                .offerTopic {
+                    display: flex;
+                    gap: 25px;
+                    padding: 6px 0 25px 15%;
+                }
+
                 .packs {
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-
+                    align-items: flex-start;
+                    gap: 25px;
+                    
                     .pack {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 208px;
+                        height: 395px;
+                        border-radius: 25px;
+                        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.16);
 
+                        &__name {
+                            font-size: 18px;
+                            line-height: 22px;
+                            margin: 10px 0;
+                        }
+
+                        &__list {
+                            padding: 0;
+                        }
+
+                        &__button {
+                            margin: auto 0 10px;
+                        }
+                    }
+                    
+                    .starterPack {
+                        background-color: #D18B3E;
+                    }
+
+                    .millionairePack {
+                        background-color: #BF7E37;
+                    }
+
+                    .richPack {
+                        background-color: #BB7A38;
                     }
                 }
             }
