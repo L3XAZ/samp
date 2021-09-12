@@ -31,14 +31,14 @@
         font-weight: 700;
         line-height: 33px;
         letter-spacing: 0.14em;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         color: rgba(255, 255, 255, 0.8);
         border: 1px solid rgba(255, 255, 255, 0.8);
         border-radius: 42px;
         cursor: pointer;
 
         &:hover {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(255, 255, 255, 1);
         }
 

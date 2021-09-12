@@ -7,8 +7,6 @@ import millionairePack from './../../images/millionaire_pack.png';
 import richPack from './../../images/rich_pack.png';
 import vector_15 from './../../images/vector_15.svg';
 import vector_16 from './../../images/vector_16.svg';
-import caseVectorLeft from './../../images/case_vector_left.svg';
-import caseVectorRight from './../../images/case_vector_right.svg';
 import bronzeCase from './../../images/bronze_case.png';
 import silverCase from './../../images/silver_case.png';
 import goldenCase from './../../images/golden_case.png';
@@ -17,10 +15,17 @@ import shoppingBasket from './../../images/shopping-basket.png';
 import vector_13 from './../../images/vector_13.svg';
 import vector_14 from './../../images/vector_14.svg';
 import vector_14_mirror from './../../images/vector_14_mirror.svg';
+import donationOptions from './../../data/donationOptions.json'
+import Pack from './Pack/Pack';
+import VipCase from './VipCase/VipCase';
 
 
 export default function DonatePage() {
     const [disablePayment, setDisablePayment] = useState(true)
+    const [donationAmount, setDonationAmount] = useState('')
+    const [nickname, setNickname] = useState('')
+
+    const addPriceToDonationAmount = addedPrice => setDonationAmount(Number(donationAmount) + addedPrice)
 
     return (
         <div className={styles.donatePage}>
@@ -37,7 +42,7 @@ export default function DonatePage() {
                             <div className={styles.choseServer}>
                                 <select className={`${styles.formField} ${styles.select}`} required>
                                     <option value="" selected disabled hidden>Выберите сервер</option>
-                                    <option value="test">Test</option>
+                                    <option value="davinci">DaVinci</option>
                                 </select>
                             </div>
                             <div className={styles.enterNickname}>
@@ -46,6 +51,8 @@ export default function DonatePage() {
                                     type="text"
                                     name="nickname"
                                     placeholder="Введите никнейм"
+                                    value={nickname}
+                                    onInput={e => setNickname(e.target.value)}
                                     className={`${styles.formField} ${styles.input}`}
                                 />
                             </div>
@@ -59,9 +66,14 @@ export default function DonatePage() {
                             <div className={styles.enterAmount}>
                                 <input
                                     required
-                                    type="text"
+                                    type="number"
                                     name="amount"
                                     placeholder="Сумма"
+                                    value={donationAmount}
+                                    onInput={e => {
+                                        setDonationAmount(e.target.value)
+                                        console.log(donationAmount)
+                                    }}
                                     className={`${styles.formField} ${styles.input}`}
                                 />
                             </div>
@@ -74,7 +86,7 @@ export default function DonatePage() {
                                 disabled={disablePayment}
                                 className={styles.formSubmit}
                             >
-                                <p>Оплатить</p>
+                                <p>ОПЛАТИТЬ</p>
                                 <img src={shoppingBasket} alt="" />
                             </button>
                         </form>
@@ -85,45 +97,26 @@ export default function DonatePage() {
                             <h2>ЧТО МОЖНО КУПИТЬ?</h2>
                         </div>
                         <div className={styles.packs}>
-                            <div className={`${styles.pack} ${styles.starterPack}`}>
-                                <img src={starterPack} alt="starter pack" />
-                                <b className={styles.pack__name}>Пакет “Стартовый”</b>
-                                <ul className={styles.pack__list}>
-                                    <li>- $500 000</li>
-                                    <li>- Лицензия на авто</li>
-                                    <li>- Законопослушность +50 </li>
-                                    <li>- 3 дня Bronze VIP</li>
-                                </ul>
-                                <button className={styles.pack__button}>350 Руб.</button>
-                            </div>
-                            <div className={`${styles.pack} ${styles.millionairePack}`}>
-                                <img src={millionairePack} alt="millionaire pack" />
-                                <b className={styles.pack__name}>Пакет “Миллионер”</b>
-                                <ul className={styles.pack__list}>
-                                    <li>- $1 000 000</li>
-                                    <li>- Лицензия на авто </li>
-                                    <li>- Законопослушность +50</li>
-                                    <li>- 50% ко всем скиллам</li>
-                                    <li>- 3 дня х2 EXP</li>
-                                    <li>- 5 дней Silver VIP</li>
-                                </ul>
-                                <button className={styles.pack__button}>650 Руб.</button>
-                            </div>
-                            <div className={`${styles.pack} ${styles.richPack}`}>
-                                <img src={richPack} alt="rich pack" />
-                                <b className={styles.pack__name}>Пакет “Богач”</b>
-                                <ul className={styles.pack__list}>
-                                    <li>- $2 000 000</li>
-                                    <li>- Лицензия на авто</li>
-                                    <li>- Законопослушность +50</li>
-                                    <li>- 100% всех скиллов</li>
-                                    <li>- Все лицензии </li>
-                                    <li>- 5 дней х2 EXP</li>
-                                    <li>- 7 дней Gold VIP</li>
-                                </ul>
-                                <button className={styles.pack__button}>1400 Руб.</button>
-                            </div>
+                            <Pack
+                                pack={donationOptions.packs[0]}
+                                image={starterPack}
+                                className={styles.starterPack}
+                                addPriceToDonationAmount={addPriceToDonationAmount}
+                            />
+                            <Pack
+                                pack={donationOptions.packs[1]}
+                                image={millionairePack}
+                                className={styles.millionairePack}
+                                addPriceToDonationAmount={addPriceToDonationAmount}
+                            />
+                            <Pack
+                                pack={donationOptions.packs[2]}
+                                image={richPack}
+                                className={styles.richPack}
+                                addPriceToDonationAmount={addPriceToDonationAmount}
+                            />
                         </div>
+                        <b className={styles.note}><i>Для активации стартовых пакетов и VIP статусов активируйте ключ /donate в игре!</i></b>
                     </div>
                 </section>
                 <section className={styles.vipCases}>
@@ -133,123 +126,26 @@ export default function DonatePage() {
                         <img src={vector_16} alt="" />
                     </div>
                     <div className={styles.cases}>
-                        <div className={styles.case}>
-                            <img src={bronzeCase} alt="bronze case" />
-                            <div>
-                                <img src={caseVectorLeft} alt="" />
-                                <h3>BRONZE</h3>
-                                <img src={caseVectorRight} alt="" />
-                            </div>
-                            <ul>
-                                <li>Каждый третий PayDay +1 exp</li>
-                                <li>Ускоренно лечение в два раза</li>
-                                <li>Ускоренная прокачка навыка на работах</li>
-                                <li>Возможность оплачивать дом на 30 дней</li>
-                            </ul>
-                            <div>
-                                <p>МЕСЯЦ:</p>
-                                <p>3 МЕСЯЦА:</p>
-                                <p>6 МЕСЯЦЕВ:</p>
-                            </div>
-                            <div>
-                                <p>200 Руб.</p>
-                                <p>350 Руб.</p>
-                                <p>560 Руб.</p>
-                            </div>
-                            <button>КУПИТЬ</button>
-                        </div>
-                        <div className={styles.case}>
-                            <img src={silverCase} alt="silver case" />
-                            <div>
-                                <img src={caseVectorLeft} alt="" />
-                                <h3>SILVER</h3>
-                                <img src={caseVectorRight} alt="" />
-                            </div>
-                            <ul>
-                                <li>Все преимущества Bronze VIP</li>
-                                <li>Ускоренная прокачка скиллов на оружие (х2)</li>
-                                <li>Каждый второй PayDay +1 exp</li>
-                                <li>Уровень голода сокращается  в два раза медленнее</li>
-                                <li>Возможность владеть двумя домами</li>
-                                <li>Уменьшенный налог на оплату дома</li>
-                                <li>Скидка 50% на оплату автомобильных штрафов</li>
-                            </ul>
-                            <div>
-                                <p>МЕСЯЦ:</p>
-                                <p>3 МЕСЯЦА:</p>
-                                <p>6 МЕСЯЦЕВ:</p>
-                            </div>
-                            <div>
-                                <p>300 Руб.</p>
-                                <p>625 Руб.</p>
-                                <p>1000 Руб.</p>
-                            </div>
-                            <button>КУПИТЬ</button>
-                        </div>
-                        <div className={styles.case}>
-                            <img src={goldenCase} alt="golden case" />
-                            <div>
-                                <img src={caseVectorLeft} alt="" />
-                                <h3>GOLD</h3>
-                                <img src={caseVectorRight} alt="" />
-                            </div>
-                            <ul>
-                                <li>Все преимущества Bronze / Sliver VIP</li>
-                                <li>Возможность владеть тремя домами</li>
-                                <li>Возможность владеть двумя бизнесами</li>
-                                <li>Каждый PayDay +1 EXP</li>
-                                <li>VIP чат</li>
-                                <li>Возможность выбора больницы для лечения</li>
-                                <li>Скидка 50% на оплату автомобильных штрафов</li>
-                                <li>Скидка на создание семьи на -50%</li>
-                                <li>Снижение срока наказания в тюрьме на -50%</li>
-                            </ul>
-                            <div>
-                                <p>МЕСЯЦ:</p>
-                                <p>3 МЕСЯЦА:</p>
-                                <p>6 МЕСЯЦЕВ:</p>
-                            </div>
-                            <div>
-                                <p>500 Руб.</p>
-                                <p>1250 Руб.</p>
-                                <p>2000 Руб.</p>
-                            </div>
-                            <button>КУПИТЬ</button>
-                        </div>
-                        <div className={styles.case}>
-                            <img src={sponsorCase} alt="sponsor case" />
-                            <div>
-                                <img src={caseVectorLeft} alt="" />
-                                <h3>SPONSOR</h3>
-                                <img src={caseVectorRight} alt="" />
-                            </div>
-                            <ul>
-                                <li>Все преимущества Gold VIP</li>
-                                <li>Продлевать VIP статус не нужно</li>
-                                <li>Первые 150 человек получат уникальный аксессуар</li>
-                                <li>Первые 150 человек получат уникальный автомобиль</li>
-                                <li>Владелец подписки получает уникальный кейс</li>
-                                <li>Возможность иметь авто без дома</li>
-                                <li>Стоимость отправки объявления в 2 раза меньше</li>
-                                <li>Открытие дополнительной страницы инвентаря</li>
-                                <li>Получение 1-го донат поинта в час (кешбек 600)</li>
-                                <li>Возможность передавать до 50.000$ через /pay</li>
-                                <li>Вы теряете уровень розыска в 2 раза быстрее</li>
-                                <li>Уникальный префикс в VIP чате до 6 символов</li>
-                                <li>Возможность самому уволится из фракции</li>
-                                <li>Возможность повторной отправки репорта без КД</li>
-                                <li>Комиссия в казино меньше в 2 раза</li>
-                                <li>Лицензии навсегда</li>
-                                <li>Все скиллы на оружие</li>
-                                <li>Возможность получения роли в дискорде</li>
-                                <li>Возможность получения роли на форуме</li>
-                                <li>Возможность установить мультимедиа в подпись на форуме</li>
-                            </ul>
-                            <div>
-                                <p>5000 Руб.</p>
-                            </div>
-                            <button>КУПИТЬ</button>
-                        </div>
+                        <VipCase
+                            vipCase={donationOptions.vipCases[0]}
+                            image={bronzeCase}
+                            addPriceToDonationAmount={addPriceToDonationAmount}
+                        />
+                        <VipCase
+                            vipCase={donationOptions.vipCases[1]}
+                            image={silverCase}
+                            addPriceToDonationAmount={addPriceToDonationAmount}
+                        />
+                        <VipCase
+                            vipCase={donationOptions.vipCases[2]}
+                            image={goldenCase}
+                            addPriceToDonationAmount={addPriceToDonationAmount}
+                        />
+                        <VipCase
+                            vipCase={donationOptions.vipCases[3]}
+                            image={sponsorCase}
+                            addPriceToDonationAmount={addPriceToDonationAmount}
+                        />
                     </div>
                 </section>
             </div>

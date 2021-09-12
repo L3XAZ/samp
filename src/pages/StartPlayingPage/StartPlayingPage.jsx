@@ -20,14 +20,17 @@ export default function StartPlayingPage() {
                         <Launcher
                             title="ЛАУНЧЕР RENAISSANCE RP"
                             text="Недоступны все функции в игре?Скачивай лаунчер и весь функционал сервера будет доступен. Автомобили мечты, голосовой чат и прочее."
+                            backgroundColor="rgba(197, 121, 46, 0.5)"
                         />
                         <Launcher
                             title="БЕЗ ЛАУНЧЕРА"
                             text="Чистая GTA:SA, с голосовым чатом. Недоступны все функции сервера."
+                            backgroundColor="rgba(202, 126, 51, 0.5)"
                         />
                         <Launcher
                             title="МОБИЛЬНЫЙ КЛИЕНТ"
                             text="Играй на учебе/работе прямо со своего Android (7.0) смартфона! Голосовой чат и весь функционал сервера уже внутри!"
+                            backgroundColor="rgba(179, 109, 49, 0.5)"
                         />
                     </div>
                 </section>

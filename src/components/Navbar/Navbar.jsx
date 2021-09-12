@@ -3,6 +3,9 @@ import styles from './Navbar.module.scss';
 import { Link, NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import logo from './../../images/logo_orange.png';
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-oldschool-dark";
+import UnavailablePage from './UnavailablePage/UnavailablePage';
 
 export default function Navbar() {
     return (
@@ -49,13 +52,18 @@ export default function Navbar() {
                 >
                     ДОНАТ
                 </NavLink>
-                <NavLink
-                    to="/account"
-                    className={`${styles.link} ${styles.accountLink}`}
-                    activeClassName={styles.activeLink}
+                <Provider   
+                    template={AlertTemplate}
+                    {...{ timeout: 1500, position: positions.BOTTOM_CENTER }}
                 >
-                    ЛИЧНЫЙ КАБИНЕТ
-                </NavLink>
+                    <UnavailablePage
+                        // to="/account"
+                        className={`${styles.link} ${styles.accountLink}`}
+                        // activeClassName={styles.activeLink}
+                    >
+                        {/* ЛИЧНЫЙ КАБИНЕТ */}
+                    </UnavailablePage>
+                </Provider>
             </nav>
         </header>
     )

@@ -1,15 +1,11 @@
 @import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   font-family: Candara;
-}
-
-ul[class],
-ol[class] {
-  padding: 0;
 }
 
 body,

@@ -30,6 +30,7 @@
             white-space: nowrap;
             height: 100%;
             text-decoration: none;
+            user-select: none;
             color: white;
             
             &:hover {
@@ -43,6 +44,7 @@
 
         .accountLink {
             padding: 0 10px 0;
+            cursor: pointer;
         }
 
         .logo {
@@ -50,6 +52,7 @@
             justify-content: center;
             align-items: center;
             pointer-events: none;
+            user-select: none;
         }
     }
 }

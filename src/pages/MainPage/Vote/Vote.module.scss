@@ -17,7 +17,7 @@
         text-align: right;
 
         .percent {
-            font-family: Roboto;
+            font-family: 'Roboto', sans-serif;
             font-size: 10px;
             font-weight: 700;
             line-height: 12px;
@@ -30,7 +30,7 @@
     .submit {
         width: 166px;
         height: 33px;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         color: rgba(255, 255, 255, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 42px;

@@ -18,8 +18,8 @@ export default function ServerCard({ name, address, visitors }) {
                 <h3 className={styles.serverName}>{name}</h3>
                 <p className={styles.serverAddress}>{address}</p>
                 <div className={styles.attendance}>
-                    <p className={styles.serverVisitors}>{visitors}/1000</p>
-                    <Progressbar width='224px' height='3px' progress={visitors / 10} bgColor='#FFFFFF' progressColor='#FB6003' />
+                    <p className={styles.serverVisitors}>{visitors} / 1000</p>
+                    <Progressbar width='224px' height='3px' progress={visitors / 10} bgColor='#FFFFFF' progressColor='#FFB98E' />
                 </div>
             </button>
         </Fragment>

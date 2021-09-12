@@ -81,11 +81,11 @@ export default function MainPage() {
                             <h2 className={styles.server__topic}>НАШИ СЕРВЕРА</h2>
                             <Provider
                                 template={AlertTemplate}
-                                {...{ timeout: 1000, position: positions.BOTTOM_CENTER }}
+                                {...{ timeout: 1500, position: positions.BOTTOM_CENTER }}
                             >
                                 <div className={styles.card}>
                                     <ServerCard
-                                        name="TEST"
+                                        name="DaVinci"
                                         address="http://davinci.renaissance-rp.ru:7777"
                                         visitors="777"
                                     />
@@ -200,8 +200,7 @@ export default function MainPage() {
                             </Link>
                         </div>
                         <div className={styles.contacts}>
-                            <p>Контакты:</p>
-                            <p>E-mail: <a href="mailto:renaissancerp.cooperation@gmail.com">renaissancerp.cooperation@gmail.com</a></p>
+                            <p>E-mail: <a href="mailto:renaissancerp.cooperation@gmail.com">admin@renaissance-rp.ru</a></p>
                         </div>
                         <HashLink
                             to="/main#intro"
