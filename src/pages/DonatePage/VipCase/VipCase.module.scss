@@ -7,6 +7,10 @@
     border-radius: 25px;
     background-color: white;
 
+    @media (max-width: 1150px) {
+        height: auto;
+    }
+
     &__topic {
         display: grid;
         grid-template-columns: repeat(3, auto);

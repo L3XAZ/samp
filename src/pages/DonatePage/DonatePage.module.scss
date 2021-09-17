@@ -11,19 +11,27 @@
             width: 80%;
             max-width: 1173px;
         
-            @media (max-width: 1100px) {
+            @media (max-width: 1400px) {
                 width: 90%;
             }
         
-            // @media (max-width: 960px) {
-            //     width: 90%;
-            // }
+            @media (max-width: 1250px) {
+                width: 100%;
+            }
         }
 
         .donationFormAndPacks {
             display: flex;
             justify-content: space-between;
             margin-top: 80px;
+
+            @media (max-width: 1400px) {
+                justify-content: space-around;
+            }
+
+            @media (max-width: 768px) {
+                margin-top: 33px;
+            }
 
             button {
                 display: flex;
@@ -51,110 +59,143 @@
                 }
             }
 
-            .donation {
+            .donation__form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 384px;
+                height: 534px;
 
-                &__form {
+                .formTopic {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 384px;
-                    height: 534px;
-
+                    justify-content: center;
+                    gap: 25px;
+                    width: 100%;
+                    &_mobile {
+                        display: none;
+                    }
+                }
+                
+                @media (max-width: 500px) {
+                    width: 100%;
                     .formTopic {
-                        display: flex;
-                        justify-content: center;
-                        gap: 25px;
-                        width: 100%;
-                    }
-
-                    .formTitle {
-                        font-size: 40px;
-                        line-height: 48px;
-                    }
-
-                    .formField {
-                        width: 340px;
-                        height: 57px;
-                        padding: 0 30px 0 55px;
-                        outline: none;
-                        box-shadow: none;
-                        border: 0 !important;
-                        color: rgba(0, 0, 0, 0.5);
-                        background: #FCEFEF;
-                        background-image: none;
-                        border-radius: 42px;
-                        font-weight: 700;
-                        line-height: 20px;
-                    }
-
-                    .select {
-                        background-image: url('./../../images/select_arrow.svg');
-                        background-repeat: no-repeat;
-                        background-position: right 20px top 50%;
-                        appearance: none;
-                        -ms-appearance: none;
-                        -moz-appearance: none;
-                        -webkit-appearance: none;
-
-                        &::-ms-expand {
-                            display: none;
-                        }
-                        
-                        &:focus {
-                            background-image: url('./../../images/select_arrow_2.svg');
-                        }
-
-                        .optionWrap {
-                            white-space: pre-line !important;
+                        display: none;
+                        margin: 0;  
+                        &_mobile {
+                            display: grid;
+                            grid-template-columns: repeat(3, auto);
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;  
                         }
                     }
+                }
 
-                    .choseServer, .enterNickname, .chosePaymentType, .enterAmount {
-                        position: relative;
-                        &::before {
-                            position: absolute;
-                            top: 16px;
-                            left: 20px;
-                        }
+                .formTitle {
+                    font-size: 40px;
+                    line-height: 48px;
+                }
+                .formField {
+                    width: 340px;
+                    height: 57px;
+                    padding: 0 30px 0 55px;
+                    outline: none;
+                    box-shadow: none;
+                    border: 0 !important;
+                    color: rgba(0, 0, 0, 0.5);
+                    background: #FCEFEF;
+                    background-image: none;
+                    border-radius: 42px;
+                    font-weight: 700;
+                    line-height: 20px;
+
+                    @media (max-width: 350px) {
+                        width: 300px;
+                    }
+                }
+                .select {
+                    background-image: url('./../../images/select_arrow.svg');
+                    background-repeat: no-repeat;
+                    background-position: right 20px top 50%;
+                    appearance: none;
+                    -ms-appearance: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    &::-ms-expand {
+                        display: none;
                     }
                     
-                    .choseServer::before  {
-                        content: url('./../../images/location.svg');
+                    &:focus {
+                        background-image: url('./../../images/select_arrow_2.svg');
                     }
-
-                    .enterNickname::before {
-                        content: url('./../../images/nickname_picture.svg');
+                    .optionWrap {
+                        white-space: pre-line !important;
                     }
-
-                    .chosePaymentType::before {
-                        content: url('./../../images/cards.svg');
+                }
+                .choseServer, .enterNickname, .enterAmount {
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        top: 16px;
+                        left: 20px;
                     }
-
-                    .enterAmount::before {
-                        content: url('./../../images/wallet.svg');
-                        top: 18px;
-                    }
-
-                    .formSubmit {
-                        gap: 30px;
-                        width: 217px;
-                        height: 46px;
-                        font-size: 17px;
-
-                        &:disabled {
-                            background-color: rgba(150, 150, 150, 0.2);
-                        }
+                }
+                
+                .choseServer::before  {
+                    content: url('./../../images/location.svg');
+                }
+                .enterNickname::before {
+                    content: url('./../../images/nickname_picture.svg');
+                }
+                .enterAmount::before {
+                    content: url('./../../images/wallet.svg');
+                    top: 18px;
+                }
+                .formSubmit {
+                    gap: 30px;
+                    width: 217px;
+                    height: 46px;
+                    font-size: 17px;
+                    &:disabled {
+                        background-color: rgba(150, 150, 150, 0.2);
                     }
                 }
             }
 
             .offer {
-                
-                .offerTopic {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                &__topic {
                     display: flex;
+                    justify-content: center;
                     gap: 25px;
-                    padding: 6px 0 25px 15%;
+                    margin-bottom: 10px;
+
+                    &_mobile {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 500px) {
+                    &__topic {
+                        display: none;
+                        margin: 0;
+    
+                        &_mobile {
+                            display: grid;
+                            grid-template-columns: repeat(3, auto);
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                }
+
+                &__title {
+                    font-size: 28px;
+                    line-height: 34px;
                 }
 
                 .packs {
@@ -179,9 +220,8 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 45px;
+                    min-height: 45px;
                     border-radius: 25px;
-                    margin-top: 25px;
                     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
                     background-color: #D18B3E;
                 }
@@ -189,19 +229,39 @@
         }
 
         .vipCases {
+            padding-top: 72px;
+
             &__topic {
                 display: grid;
                 grid-template-columns: repeat(3, auto);
                 align-items: center;
                 margin-bottom: 45px;
+
+                &_mobile {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 500px) {
+                &__topic {
+                    display: none;
+                    margin: 0;
+
+                    &_mobile {
+                        display: grid;
+                        grid-template-columns: repeat(3, auto);
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 37px;
+                    }
+                }
             }
 
             &__title{
                 font-size: 30px;
                 line-height: 37px;
-                font-size: 18px;
-                line-height: 22px;
                 letter-spacing: 0.1em;
+                margin: 0 15px;
             }
 
             .cases {
@@ -209,6 +269,91 @@
                 justify-content: space-between;
                 margin-bottom: 50px;
                 color: rgba(12, 12, 12, 0.7);
+                @media (max-width: 1400px) {
+                    margin: 0 15px;
+                }
+            }
+        }
+
+        @media (max-width: 1150px) {
+            .donationFormAndPacks {
+                flex-direction: column;
+                align-items: center;
+                gap: 60px;
+    
+                .donation {
+                    &__form {
+                        height: 534px;
+                    }
+                }
+    
+                .offer {
+                    &__topic {
+                        order: 2;
+                        margin: 0;
+                    }
+    
+                    .packs {
+                        order: 3;
+                    }
+    
+                    .note {
+                        order: 1;
+                        margin-bottom: 35px;
+                    }
+                }            
+            }
+    
+            .vipCases {
+                padding-top: 60px;
+    
+                .cases {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    justify-items: center;
+                    gap: 45px;
+                    max-width: 780px;
+                    margin: 0 auto 61px;
+                }
+            }
+        }
+
+        @media (max-width: 700px) {
+            .donationFormAndPacks {
+                .offer {
+                    .packs {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 35px;
+                    }
+
+                    .note {
+                        text-align: center;
+                        padding: 0 20px;
+                        margin: 0 50px;
+                    }
+                }            
+            }
+    
+            .vipCases {    
+                .cases {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 45px;
+                }
+            }
+        }
+
+        @media (max-width: 500px) {
+            .formTitle_mobile {
+                font-size: 34px;
+                line-height: 40px;
+            }
+            
+            .offer__title_mobile, .vipCases__title_mobile {
+                font-size: 20px;
+                line-height: 24px;
             }
         }
     }

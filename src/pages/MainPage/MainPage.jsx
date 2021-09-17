@@ -14,6 +14,12 @@ import vector_3 from './../../images/vector_3.svg';
 import vector_4 from './../../images/vector_4.svg';
 import vector_5 from './../../images/vector_5.svg';
 import vector_6 from './../../images/vector_6.svg';
+import vector_1_mobile from './../../images/vector_1_mobile.svg';
+import vector_2_mobile from './../../images/vector_2_mobile.svg';
+import vector_3_mobile from './../../images/vector_3_mobile.svg';
+import vector_4_mobile from './../../images/vector_4_mobile.svg';
+import vector_5_mobile from './../../images/vector_5_mobile.svg';
+import vector_6_mobile from './../../images/vector_6_mobile.svg';
 import instagram from './../../images/instagram.png';
 import youtube from './../../images/youtube.png';
 import vk from './../../images/vk.png';
@@ -76,6 +82,10 @@ export default function MainPage() {
             <div className={styles.container}>
                 <main className={styles.main}>
                     <section className={styles.serverAndGroup}>
+                        <div className={styles.mobileVectors}>
+                            <img src={vector_3_mobile} alt="" />
+                            <img src={vector_4_mobile} alt="" />
+                        </div>
                         <div className={styles.server}>
                             <img src={vector_3} alt="" />
                             <h2 className={styles.server__topic}>НАШИ СЕРВЕРА</h2>
@@ -111,6 +121,11 @@ export default function MainPage() {
                             <h2>О НАС</h2>
                             <img src={vector_6} alt="" />
                         </div>
+                        <div className={styles.about__topic_mobile}>
+                            <img src={vector_5_mobile} alt="" />
+                            <h2>О НАС</h2>
+                            <img src={vector_6_mobile} alt="" />
+                        </div>
                         <div className={styles.about__description}>
                             <p>
                                 Если ты, желаешь примкнуться к мастерам эпохи Возрождение и ощутить эстетическое удовлетворение старой
@@ -144,6 +159,11 @@ export default function MainPage() {
                             <img src={vector_1} alt="" />
                             <h2>НОВОСТИ</h2>
                             <img src={vector_2} alt="" />
+                        </div>
+                        <div className={styles.news__topic_mobile}>
+                            <img src={vector_1_mobile} alt="" />
+                            <h2>НОВОСТИ</h2>
+                            <img src={vector_2_mobile} alt="" />
                         </div>
                         <News />
                     </section>

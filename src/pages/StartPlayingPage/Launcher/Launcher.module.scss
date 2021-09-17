@@ -9,6 +9,11 @@
         height: 225px;
         padding: 25px 17px;
         background: url('./../../../images/launcher_border.svg');
+
+        @media (max-width: 400px) {
+            max-width: 267px;
+            height: 182px;
+        }
     }
 
     &__title {
@@ -17,11 +22,21 @@
         font-size: 24px;
         line-height: 29px;
         text-align: center;
+
+        @media (max-width: 400px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 
     &__text {
         font-size: 18px;
         line-height: 22px;
+
+        @media (max-width: 400px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__button {

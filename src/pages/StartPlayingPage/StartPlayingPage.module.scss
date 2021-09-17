@@ -22,6 +22,11 @@
                 align-items: center;
                 margin-bottom: 45px;
 
+                @media (max-width: 768px) {
+                    display: none;
+                    margin: 0;
+                }
+
                 .title{
                     width: 460px;
                     font-size: 64px;
@@ -29,12 +34,55 @@
                     white-space: nowrap;
                     margin: 0 21px;
                 }
+
+                &_mobile {
+                    display: none;
+
+                    .title{
+                        font-size: 56px;
+                        line-height: 64px;
+                        white-space: nowrap;
+    
+                        @media (max-width: 600px) {
+                            font-size: 44px;
+                            line-height: 56px;
+                        }
+
+                        @media (max-width: 500px) {
+                            font-size: 32px;
+                            line-height: 44px;
+                        }
+
+                        @media (max-width: 450px) {
+                            font-size: 28px;
+                            line-height: 32px;
+                        }
+
+                        @media (max-width: 380px) {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        display: grid;
+                        grid-template-columns: repeat(3, auto);
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 107px 0 20px;
+                    }
+                }
             }
 
             .launchers {
                 display: flex;
                 justify-content: space-between;
 
+                @media (max-width: 768px) {
+                    &__desktop {
+                        display: none;
+                    }
+                }
             }
 
             @media (max-width: 1450px) {
@@ -47,7 +95,7 @@
 
             @media (max-width: 1150px) {
                 .topic {
-                    margin: 67px 0 15px;
+                    margin: 107px 0 20px;
                 }
 
                 .launchers {
@@ -57,10 +105,18 @@
                     margin-bottom: 35px;
                 }
             }
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            align-items: flex-start;
         }
     }
 
-    @media (max-width: 1150px) {
+    @media (min-width: 769px) and (max-width: 1150px) {
         height: auto;
     }
 }

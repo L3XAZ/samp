@@ -9,7 +9,7 @@
     z-index: 1000;
 
     .list {
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(3, 1fr) 2fr repeat(3, 1fr);
         align-items: center;
         width: 70%;
@@ -46,13 +46,65 @@
             padding: 0 10px 0;
             cursor: pointer;
         }
+    }
 
-        .logo {
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .logoMobile {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        padding: 0 5% 0 3%;
+        background-color: transparent;
+        
+        .list {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            pointer-events: none;
-            user-select: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.85);
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            padding: 67px 5% 0 0;
+            transition: transform 0.3s ease-in-out;
+
+            .link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                white-space: nowrap;
+                height: 67px;
+                text-decoration: none;
+                user-select: none;
+                color: white;
+            }
+
+            .logoNav, .aboutLink, .newsLink {
+                display: none;
+            }
+
+            .accountLink {
+                padding: 0;
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .logoMobile {
+            display: block;
         }
     }
 }
