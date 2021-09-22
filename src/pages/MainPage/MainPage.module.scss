@@ -45,11 +45,18 @@
     .header {
         background: no-repeat url("../../images/main_top_bg.jpg");
         background-size: cover;
+        @media (min-width: 1600px) {
+            background-position: center;
+        }
 
         .intro {
             padding-top: 215px;
             @media (max-width: 768px) {
                 padding-top: 107px;
+            }
+
+            @media (min-width: 1600px) {
+                padding-bottom: 150px;
             }
 
             .offer {
@@ -202,6 +209,10 @@
                 margin: 150px 0 83px;
                 padding-top: 25px;
                 
+                @media (min-width: 1600px) {
+                    margin-top: 0px;
+                }
+
                 .mobileVectors {
                     display: none;
                 }
